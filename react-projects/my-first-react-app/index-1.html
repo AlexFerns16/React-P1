@@ -4,8 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My First React App</title>
+    <style>
+      .class_1 {
+        border-radius: 15px;
+        text-align: center;
+        width: 50%;
+      }
+
+      #id_1 {
+        margin-left: 30px;
+      }
+    </style>
   </head>
   <body>
     <h1>React Application</h1>
+
+    <div id="root_1"></div>
+    <div id="root_2"></div>
+
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+
+    <script>
+      // VanillaJS
+      // const el = document.createElement("h1");
+
+      // ReactJS element 1
+      const el1 = React.createElement(
+        "h1", // element
+        null, // attributes
+        "Hello React 1!" // text
+      );
+
+      // ReactJS element 2
+      const el2 = React.createElement(
+        "h1", // element
+        {
+          id: "id_1",
+          class: "class_1",
+          style: { color: "red", backgroundColor: "aqua" },
+        }, // attributes
+        "Hello React 2!" // text
+      );
+
+      // get DOM element by 'id' > this is the actual DOM
+      const container_1 = document.getElementById("root_1");
+      const container_2 = document.getElementById("root_2");
+
+      // create root for virtual DOM using the actual DOM element > this is the virtual DOM
+      const root_1 = ReactDOM.createRoot(container_1);
+      const root_2 = ReactDOM.createRoot(container_2);
+
+      //
+      root_1.render(el1);
+      root_2.render(el2);
+    </script>
   </body>
 </html>
