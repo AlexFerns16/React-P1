@@ -17,21 +17,35 @@
     <script>
       // function based component
       function FuncCompo() {
-        return React.createElement(
-          "h1", // element
-          null, // attributes
-          "Hello React Function!" // text
-        );
+        return [
+          React.createElement(
+            "h1", // element
+            null, // attributes
+            "Hello React Function 1!" // text
+          ),
+          React.createElement(
+            "h1", // element
+            null, // attributes
+            "Hello React Function 2!" // text
+          ),
+        ];
       }
 
       // class based component
       class ClassCompo extends React.Component {
         render() {
-          return React.createElement(
-            "h1", // element
-            null, // attributes
-            "Hello React Class!" // text
-          );
+          return [
+            React.createElement(
+              "h1", // element
+              null, // attributes
+              "Hello React Class 1!" // text
+            ),
+            React.createElement(
+              "h1", // element
+              null, // attributes
+              "Hello React Class 2!" // text
+            ),
+          ];
         }
       }
 
