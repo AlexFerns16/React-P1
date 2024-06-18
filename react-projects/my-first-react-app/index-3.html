@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First React App</title>
+  </head>
+  <body>
+    <h1>React Application</h1>
+
+    <div id="root_func"></div>
+
+    <!-- react -->
+    <script src="node_modules/react/umd/react.development.js"></script>
+
+    <!-- react DOM -->
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- code -->
+    <script type="text/babel">
+      // function based component
+      function FuncCompo() {
+        // JSX - JavaScript XML
+        return <h1>Hello React Babel</h1>;
+      }
+
+      // get DOM element by 'id' > this is the actual DOM
+      const container_func = document.getElementById("root_func");
+
+      // create root for virtual DOM using the actual DOM element > this is the virtual DOM
+      const root_func = ReactDOM.createRoot(container_func);
+
+      //
+      root_func.render(React.createElement(FuncCompo));
+    </script>
+  </body>
+</html>
