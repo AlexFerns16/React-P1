@@ -9,6 +9,7 @@
     <h1>React Application</h1>
 
     <div id="root_func"></div>
+    <div id="button"></div>
 
     <!-- react -->
     <script src="node_modules/react/umd/react.development.js"></script>
@@ -21,7 +22,7 @@
 
     <!-- code -->
     <script type="text/babel">
-      // function based component
+      // function based component 1
       function FuncCompo() {
         // JSX - JavaScript XML
         return (
@@ -31,14 +32,23 @@
         );
       }
 
+      // function based component 2
+      function Button() {
+        // JSX - JavaScript XML
+        return <button>Click Me!</button>;
+      }
+
       // get DOM element by 'id' > this is the actual DOM
       const container_func = document.getElementById("root_func");
+      const container_btn = document.getElementById("button");
 
       // create root for virtual DOM using the actual DOM element > this is the virtual DOM
       const root_func = ReactDOM.createRoot(container_func);
+      const root_btn = ReactDOM.createRoot(container_btn);
 
-      //
-      root_func.render(React.createElement(FuncCompo));
+      // rendering
+      root_func.render(<FuncCompo />);
+      root_btn.render(<Button />);
     </script>
   </body>
 </html>
