@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First React App</title>
+  </head>
+  <body>
+    <h1>React Application</h1>
+
+    <div id="root_func"></div>
+    <div id="root_class"></div>
+
+    <script src="node_modules/react/umd/react.development.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+
+    <script>
+      // function based component
+      function FuncCompo() {
+        return React.createElement(
+          "h1", // element
+          null, // attributes
+          "Hello React Function!" // text
+        );
+      }
+
+      // class based component
+      class ClassCompo extends React.Component {
+        render() {
+          return React.createElement(
+            "h1", // element
+            null, // attributes
+            "Hello React Class!" // text
+          );
+        }
+      }
+
+      // get DOM element by 'id' > this is the actual DOM
+      const container_func = document.getElementById("root_func");
+      const container_class = document.getElementById("root_class");
+
+      // create root for virtual DOM using the actual DOM element > this is the virtual DOM
+      const root_func = ReactDOM.createRoot(container_func);
+      const root_class = ReactDOM.createRoot(container_class);
+
+      //
+      root_func.render(React.createElement(FuncCompo));
+      root_class.render(React.createElement(ClassCompo));
+    </script>
+  </body>
+</html>
