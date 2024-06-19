@@ -1,10 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+function FuncCompo() {
+  return (
+    <h1>
+      <div>Hello React!</div>
+    </h1>
+  );
+}
+
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(<FuncCompo />);
