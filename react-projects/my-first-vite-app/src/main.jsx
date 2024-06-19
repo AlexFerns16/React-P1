@@ -25,12 +25,23 @@ const root_2 = ReactDOM.createRoot(document.getElementById("root_2"));
 root_1.innerHTML = `
   <div>
     <h1>Hello JS - ADOM!</h1>
+    <input />
+    <pre>${new Date().toLocaleTimeString()}</pre>
   </div>
 `;
 
 //
+const username = "Alex";
 root_2.render(
   <div>
     <h1>Hello React - VDOM!</h1>
+    <input />
+    <pre>
+      {/* data binding > the data in the variable is binded to the html elements*/}
+      {username} {}
+      {/* string interpolation > data within brackets is converted to string */}
+      {4 + 5} {Math.random()} {}
+      {new Date().toLocaleTimeString()}
+    </pre>
   </div>
 );
