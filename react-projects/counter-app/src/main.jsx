@@ -31,8 +31,13 @@ function Button() {
   // 'hook' can be called anytime in the lifecycle of a component
   // whenever the state value changes, it maintains the state of a variable
   // in our case the state is nothing but the 'counter' value
-  // returns a stateful value, and a function to update it in an array, [stateful value, function]
+  // returns a stateful value, and a function to update the stateful value it in an array, [stateful value, function]
   const [counter, setCounter] = useState(0);
+  // whenever 'handleclick' is called, it will update the 'counter' value (stateful value) by calling 'setCounter' function
+  // as soon as the 'state' is updated, react will call the 'Button()' function again i.e. it will re-render the 'Button' component
+  // and the 'counter' variable will be 're-created' with the 'new value', which will be provided by the 'useState' hook
+  // and your return statement will return 'new virtual DOM' with 'updated value'
+  // react will compare the virtual DOM with actual DOM and will update only updated part in actual DOM
   const handleclick = () => {
     setCounter(counter + 1);
   };
